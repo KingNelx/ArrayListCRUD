@@ -10,7 +10,7 @@ class CRUD{
         System.out.print(" Enter name: ");
         String name = input.nextLine().toLowerCase();
 
-        if(name == ""){
+        if(name.equals("")){
             System.out.println(" Name can't add in the list.");
         }else{
             System.out.println(" Name added. ");
@@ -28,7 +28,6 @@ class CRUD{
             }
         }
 
-
     }
 
     public void update(){
@@ -36,7 +35,15 @@ class CRUD{
         String update = input.nextLine().toLowerCase();
 
         if(Names.contains(update)){
+            Names.remove(update);
 
+            System.out.print(" Enter new name: ");
+            String newName = input.nextLine();
+            Names.add(newName);
+
+            System.out.println(" Update Successfully ");
+        }else{
+            System.out.println(" Name does not exist in the list. ");
         }
     }
 
@@ -52,7 +59,6 @@ class CRUD{
         }
     }
 
-
 }
 
 public class Main {
@@ -67,24 +73,19 @@ public class Main {
             choice = input.nextInt();
 
             switch (choice){
-                case 1 ->{
+
+                case 1 ->
                     s1.add();
-                    break;
-                }
 
-                case 2 ->{
+                case 2 ->
                     s1.read();
-                    break;
-                }
 
-                case 3 ->{
+                case 3 ->
                     s1.update();
-                    break;
-                }
 
-                case 4 ->{
+                case 4 ->
                     s1.delete();
-                }
+
             }
         } while (choice != 5);
     }
