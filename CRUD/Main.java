@@ -31,6 +31,15 @@ class CRUD{
 
     }
 
+    public void update(){
+        System.out.print(" Enter name to edit: ");
+        String update = input.nextLine().toLowerCase();
+
+        if(Names.contains(update)){
+
+        }
+    }
+
     public void delete(){
         System.out.print(" Enter name to delete: ");
         String delete = input.nextLine().toLowerCase();
@@ -43,9 +52,7 @@ class CRUD{
         }
     }
 
-    public void update(){
 
-    }
 }
 
 public class Main {
@@ -68,6 +75,15 @@ public class Main {
                 case 2 ->{
                     s1.read();
                     break;
+                }
+
+                case 3 ->{
+                    s1.update();
+                    break;
+                }
+
+                case 4 ->{
+                    s1.delete();
                 }
             }
         } while (choice != 5);
