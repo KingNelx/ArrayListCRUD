@@ -5,20 +5,23 @@ import java.util.ArrayList;
 class CRUD{
     Scanner input = new Scanner(System.in);
     ArrayList<String>Names = new ArrayList<>();
+
     public void add(){
         System.out.print(" Enter name: ");
         String name = input.nextLine().toLowerCase();
 
         System.out.println(" Name added. ");
         Names.add(name);
+
     }
 
     public void read(){
         if(Names.size() == 0){
             System.out.println(" There are no existing data in the list. ");
         }else{
+            System.out.println(" List of names. ");
             for(String nameList : Names){
-                System.out.println(" List of names: " + Names);
+                System.out.println(" " + nameList);
             }
         }
 
