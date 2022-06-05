@@ -10,9 +10,12 @@ class CRUD{
         System.out.print(" Enter name: ");
         String name = input.nextLine().toLowerCase();
 
-        System.out.println(" Name added. ");
-        Names.add(name);
-
+        if(name == ""){
+            System.out.println(" Name can't add in the list.");
+        }else{
+            System.out.println(" Name added. ");
+            Names.add(name);
+        }
     }
 
     public void read(){
@@ -31,6 +34,13 @@ class CRUD{
     public void delete(){
         System.out.print(" Enter name to delete: ");
         String delete = input.nextLine().toLowerCase();
+
+        if(Names.contains(delete)){
+            Names.remove(delete);
+            System.out.println(" Deleted Successfully ");
+        }else{
+            System.out.println(" Name does not exist in the list. ");
+        }
     }
 
     public void update(){
